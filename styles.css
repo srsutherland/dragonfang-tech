@@ -1,6 +1,25 @@
 html, body, canvas {background-color:#000}
 
+a {
+    color: #222;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #444;
+    text-decoration: underline;
+}
+
 .flex-center {
     display:flex;
     justify-content:center;
-    align-items:center;}
+    align-items:center;
+    height: 95vh;
+}
+
+.footer {
+    position: absolute;
+    text-align: right;
+    right: 1em;
+    bottom: .5em;
+}
