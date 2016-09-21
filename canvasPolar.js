@@ -102,6 +102,7 @@ var CanvasPolar = (function () {
             clearInterval(this.clearI);
         }
         this.clearI = setInterval(this.drawGraph.bind(this), interval);
+        this.drawAlpha();
     };
     CanvasPolar.prototype.stop = function () {
         clearInterval(this.clearI);
@@ -113,6 +114,7 @@ var CanvasPolar = (function () {
                 return;
             }
             this.reset();
+            this.drawAlpha();
         }
         var step = Math.PI / 256 / 2;
         this.drawPoint();
@@ -123,6 +125,14 @@ var CanvasPolar = (function () {
         this.ctx.beginPath();
         this.ctx.arc(0, -this.radius * Math.sin(this.A * this.theta / this.B), this.radius * .01, 0, 2 * Math.PI, false);
         this.ctx.fill();
+    };
+    CanvasPolar.prototype.drawAlpha = function () {
+        this.ctx.save();
+        this.ctx.setTransform(1, 0, 0, 1, 0, 0);
+        this.ctx.beginPath();
+        this.ctx.font = "bold " + this.radius * 0.05 + "px arial";
+        this.ctx.fillText(this.A.toString() + "/" + this.B.toString(), this.radius * 2, this.radius * 2);
+        this.ctx.restore();
     };
     return CanvasPolar;
 }());
