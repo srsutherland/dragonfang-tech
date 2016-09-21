@@ -4,6 +4,25 @@
     <title>Polar Table</title>
     <link rel="stylesheet" href="styles.css">
     <script src="canvasPolar.js"></script>
+    <style>
+        #table-contain td:hover::before {
+            content: attr(data-alpha);
+            color: white;
+            background-color: black;
+            opacity: 0.7;
+            display: inline-block;
+            text-align: center;
+            position: absolute;
+            width: 150px;
+            height: 75px;
+            font-size: 1.5em;
+        }
+
+        td {
+            text-align: center;
+            font-size: 2em;
+        }
+    </style>
 </head>
 <body>
 
@@ -18,7 +37,7 @@
     for (var y = 1; y <= max; y++) {
         str_table += '<tr><th>' + y + '</th>';
         for (var x = 1; x <= max; x++){
-            str_table +=  '<td id="' + x + '-' + y +'">' + '</td>'
+            str_table +=  '<td id="' + x + '-' + y +'" data-alpha="' + x + '/' + y +'">' + '</td>'
         }
         str_table += '</tr>';
     }
@@ -33,7 +52,9 @@
                 spirals[a][b] = new CanvasPolar(a+'-'+b, a, b).setRunOnce();
                 spirals[a][b].start();
             } else {
-                document.getElementById(a+'-'+b).innerHTML = a/gcd(a, b) + '-' + b/gcd(a, b)
+                var elem = document.getElementById(a+'-'+b);
+                elem.innerHTML = a/gcd(a, b) + '/' + b/gcd(a, b);
+                elem.dataset.alpha = ""
             }
         }
     }
