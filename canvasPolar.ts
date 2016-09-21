@@ -25,7 +25,9 @@ class CanvasPolar {
         if (elem instanceof HTMLCanvasElement) {
             this.canvas = elem;
         } else {
-            this.canvas = new HTMLCanvasElement;
+            this.canvas = document.createElement("canvas");
+            this.canvas.height = 150;
+            this.canvas.width = 150;
             elem.appendChild(this.canvas);
         }
 
@@ -34,7 +36,7 @@ class CanvasPolar {
         this.ctx.translate(radius, radius);
         this.radius = radius * 0.90;
 
-        if (A && B) {
+        if (A != undefined && B != undefined) {
             this.setAlpha(A, B);
         } else {
             this.genAlpha()
@@ -52,7 +54,7 @@ class CanvasPolar {
         let aGCD = gcd(this.A, this.B);
         this.A /= aGCD;
         this.B /= aGCD;
-        this.max = this.B * Math.PI * (this.A % 2 == 0 || this.B % 2 == 0 ? 2 : 1) + (Math.PI/2);
+        this.max = this.B * Math.PI * (this.A % 2 == 0 || this.B % 2 == 0 ? 2 : 1) + (this.oNoClear ? Math.PI/2 : Math.PI);
     }
 
     genColor() {
@@ -80,8 +82,6 @@ class CanvasPolar {
         this.theta = 0;
         this.A = A;
         this.B = B;
-        this.A = getRandomInt(1, 20);
-        this.B = getRandomInt(1, 20);
         let aGCD = gcd(this.A, this.B);
         this.A /= aGCD;
         this.B /= aGCD;

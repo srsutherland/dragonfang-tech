@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Polar Table</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="canvasPolar.js"></script>
+</head>
+<body>
+
+<div id="table-contain"></div>
+<script>
+    var max = 20;
+    var str_table = "<table><tr><th>X</th>";
+    for (var x = 1; x <= max; x++){
+        str_table += '<th>' + x + '</th>';
+    }
+    str_table += '</tr>';
+    for (var y = 1; y <= max; y++) {
+        str_table += '<tr><th>' + y + '</th>';
+        for (var x = 1; x <= max; x++){
+            str_table +=  '<td id="' + x + '-' + y +'">' + '</td>'
+        }
+        str_table += '</tr>';
+    }
+    console.log(str_table);
+    document.getElementById("table-contain").innerHTML = str_table;
+
+    spirals = [];
+    for (var a = 1; a <= max; a++) {
+        spirals[a] = [];
+        for (var b = 1; b <= max; b++) {
+            if (gcd(a, b) == 1){
+                spirals[a][b] = new CanvasPolar(a+'-'+b, a, b).setRunOnce();
+                spirals[a][b].start();
+            } else {
+                document.getElementById(a+'-'+b).innerHTML = a/gcd(a, b) + '-' + b/gcd(a, b)
+            }
+        }
+    }
+</script>
+
+<div class="footer">
+    <a href="https://github.com/srsutherland/dragonfang-tech">source</a>
+</div>
+</body>

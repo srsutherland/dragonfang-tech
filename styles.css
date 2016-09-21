@@ -1,5 +1,9 @@
 html, body, canvas {background-color:#000}
 
+body {
+    color: #666;
+}
+
 a {
     color: #222;
     text-decoration: none;
