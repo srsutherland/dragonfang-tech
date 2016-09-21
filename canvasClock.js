@@ -1,3 +1,4 @@
+//canvasClock.ts transpiles to canvasClock.js
 var CGreen = '#3f9', CPurp = '#93f', CBlue = '#39f';
 function drawClock() {
     drawFace(ctx, radius);

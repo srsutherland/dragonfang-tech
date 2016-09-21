@@ -1,3 +1,4 @@
+//canvasClock.ts transpiles to canvasClock.js
 const CGreen = '#3f9', CPurp = '#93f', CBlue = '#39f';
 
 function drawClock() {
