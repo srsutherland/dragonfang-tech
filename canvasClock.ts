@@ -9,7 +9,7 @@ function drawClock() {
 
 function drawFace(ctx, radius) {
     ctx.shadowColor = "transparent";
-    var grad = ctx.createRadialGradient(0,0,radius*0.65, 0,0,radius*1.05);
+    let grad = ctx.createRadialGradient(0,0,radius*0.65, 0,0,radius*1.05);
     grad.addColorStop(0, CGreen);
     grad.addColorStop(1, '#000');
 
@@ -29,7 +29,7 @@ function drawFace(ctx, radius) {
     ctx.lineCap = "square";
     ctx.lineWidth = radius*0.04;
     ctx.moveTo(0, 0);
-    for (var tick = 0; tick < 12; tick++) {
+    for (let tick = 0; tick < 12; tick++) {
         ctx.moveTo(0, -radius * (tick % 3 ? 0.9 : 0.8)); //big ticks on quarters
         ctx.lineTo(0, -radius * 0.95);
         ctx.moveTo(0, 0);
@@ -42,7 +42,7 @@ function drawFace(ctx, radius) {
 
 function drawNumbers(ctx, radius) {
     const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    var now = new Date();
+    let now = new Date();
 
     ctx.shadowColor = "black";
     ctx.shadowOffsetX = 0;
@@ -61,7 +61,7 @@ function drawNumbers(ctx, radius) {
     }
 
     //date
-    let day : string = daysOfWeek[now.getDay()] + " " + now.getMonth() + "/" + now.getDate();
+    let day : string = daysOfWeek[now.getDay()] + " " + now.getMonth() + 1 + "/" + now.getDate();
 
     ctx.textBaseline="middle";
     ctx.textAlign="center";
@@ -76,7 +76,7 @@ function drawTextWithShadow(ctx, text, color, scale_px, x, y) {
     ctx.font = "bold " + scale_px + "px arial";
     ctx.fillStyle = 'black'; //black text until final layer
 
-    for (var i=0; i < 4; i++){ //4(+1 for final) shrinking layers of shadow for visibility
+    for (let i=0; i < 4; i++){ //4(+1 for final) shrinking layers of shadow for visibility
         ctx.fillText(text, x, y);
         ctx.shadowBlur *= 0.8;
     }
@@ -85,9 +85,9 @@ function drawTextWithShadow(ctx, text, color, scale_px, x, y) {
 }
 
 function drawTime(ctx, radius){
-    var now = new Date();
-    var minute = now.getMinutes();
-    var second = now.getSeconds();
+    let now = new Date();
+    let minute = now.getMinutes();
+    let second = now.getSeconds();
 
     //minute
     ctx.strokeStyle = CGreen;

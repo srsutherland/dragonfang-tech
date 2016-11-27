@@ -52,7 +52,7 @@ function drawNumbers(ctx, radius) {
         minutes = minutes.toString();
     }
     //date
-    var day = daysOfWeek[now.getDay()] + " " + now.getMonth() + "/" + now.getDate();
+    var day = daysOfWeek[now.getDay()] + " " + now.getMonth() + 1 + "/" + now.getDate();
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     drawTextWithShadow(ctx, hour, CPurp, radius * 0.4, 0, 0);
