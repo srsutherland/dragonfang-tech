@@ -3,4 +3,6 @@ Web files for [dragonfang.tech](http://dragonfang.tech/)
 
 #Links:
 * [Front page](http://dragonfang.tech/)
-* [Polar Spiral](http://dragonfang.tech/Canvas_Polar)
+* [Canvas Clock](http://dragonfang.tech/clock)
+* [Polar Spiral](http://dragonfang.tech/canvasPolar)
+* [Polar Table](http://dragonfang.tech/polar_table)
