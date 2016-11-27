@@ -61,7 +61,7 @@ function drawNumbers(ctx, radius) {
     }
 
     //date
-    let day : string = daysOfWeek[now.getDay()] + " " + now.getMonth() + 1 + "/" + now.getDate();
+    let day : string = daysOfWeek[now.getDay()] + " " + (now.getMonth() + 1) + "/" + now.getDate();
 
     ctx.textBaseline="middle";
     ctx.textAlign="center";
