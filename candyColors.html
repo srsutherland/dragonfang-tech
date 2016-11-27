@@ -1,0 +1,216 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style id="style-dark-holder"></style>
+    <style id="style-main">
+      body {color:#777;background-color:white;transition:.5s ease-out;
+      display:flex;align-items:center;justify-content:center;}
+      em {font-style:normal;color:black;font-weight:bold;}
+      table {border-collapse:collapse;border:1px solid #777;}
+      td,th {padding:2px 5px;}
+      td.br {background-color:#EEE;transition:.5s ease-out;}
+      th.box {color:white;padding:20px 5px;}
+      th:hover {border-radius: 50px;}
+      th {transition: border-radius .7s ease-out;}
+      .contain {display: inline-block;}
+      .grid {display:flex;}
+      .grid-cell {flex:1;display:flex;}
+      #lightswitch {color:white; background-color:#111;font-size:5em;
+      width:1.1em;height:1.1em;vertical-align:middle;text-align:center;
+      margin:auto;cursor:pointer;border-radius:5em;transition:.5s;}
+      #lightswitch:hover {color:#111; background-color:white;}
+    </style>
+    <style id="style-dark">
+      body {background-color:#111;}
+      em {color:white;}
+      th.box {color:#111;}
+      td.br {background-color:#444;}
+      #lightswitch {color:#111; background-color:white;}
+      #lightswitch:hover {color:white; background-color:#111;}
+    </style>
+  </head>
+  <body>
+    <div class="contain">
+      <table border="1" cellspacing="0">
+        <tr><th colspan="50" style="padding:7px"><em>Candy Colors</em></th></tr>
+        <tr>
+          <th rowspan="4" style="background-color:#3399FF" width="50px"></th>
+          <th rowspan="4"><em>#3399FF</em></th>
+          <td colspan="50" class="br"></td>
+        </tr>
+        <tr>
+          <td>24-bit rgb</td>
+          <td>red <em>51</em></td>
+          <td>green <em>153</em></td>
+          <td>blue <em>255</em></td>
+          <td>HSV</td>
+          <td>hue <em>210&deg;</em></td>
+          <td>saturation <em>80%</em></td>
+          <td>value <em>100%</em></td>
+        </tr>
+        <tr>
+          <td>Fractions</td>
+          <td>red <em>.2</em></td>
+          <td>green <em>.6</em></td>
+          <td>blue <em>1</em></td>
+          <td>HSL</td>
+          <td>hue <em>210&deg;</em></td>
+          <td>saturation <em>100%</em></td>
+          <td>lightness <em>60%</em></td>
+        </tr><tr><td colspan="50" class="br"></td></tr>
+        <tr>
+          <th rowspan="4" style="background-color:#FF3399" width="50px"></th>
+          <th rowspan="4"><em>#FF3399</em></th>
+          <td colspan="50" class="br"></td>
+        </tr>
+        <tr>
+          <td>24-bit rgb</td>
+          <td>red <em>255</em></td>
+          <td>green <em>51</em></td>
+          <td>blue <em>153</em></td>
+          <td>HSV</td>
+          <td>hue <em>330&deg;</em></td>
+          <td>saturation <em>80%</em></td>
+          <td>value <em>100%</em></td>
+        </tr>
+        <tr>
+          <td>Fractions</td>
+          <td>red <em>1</em></td>
+          <td>green <em>.2</em></td>
+          <td>blue <em>.6</em></td>
+          <td>HSL</td>
+          <td>hue <em>330&deg;</em></td>
+          <td>saturation <em>100%</em></td>
+          <td>lightness <em>60%</em></td>
+        </tr><tr><td colspan="50" class="br"></td></tr>
+        <tr>
+          <th rowspan="4" style="background-color:#99FF33" width="50px"></th>
+          <th rowspan="4"><em>#99FF33</em></th>
+          <td colspan="50" class="br"></td>
+        </tr>
+        <tr>
+          <td>24-bit rgb</td>
+          <td>red <em>153</em></td>
+          <td>green <em>255</em></td>
+          <td>blue <em>51</em></td>
+          <td>HSV</td>
+          <td>hue <em>90&deg;</em></td>
+          <td>saturation <em>80%</em></td>
+          <td>value <em>100%</em></td>
+        </tr>
+        <tr>
+          <td>Fractions</td>
+          <td>red <em>.6</em></td>
+          <td>green <em>1</em></td>
+          <td>blue <em>.2</em></td>
+          <td>HSL</td>
+          <td>hue <em>90&deg;</em></td>
+          <td>saturation <em>100%</em></td>
+          <td>lightness <em>60%</em></td>
+        </tr><tr><td colspan="50" class="br"></td></tr>
+        <tr>
+          <th rowspan="4" style="background-color:#FF9933" width="50px"></th>
+          <th rowspan="4"><em>#FF9933</em></th>
+          <td colspan="50" class="br"></td>
+        </tr>
+        <tr>
+          <td>24-bit rgb</td>
+          <td>red <em>255</em></td>
+          <td>green <em>153</em></td>
+          <td>blue <em>51</em></td>
+          <td>HSV</td>
+          <td>hue <em>30&deg;</em></td>
+          <td>saturation <em>80%</em></td>
+          <td>value <em>100%</em></td>
+        </tr>
+        <tr>
+          <td>Fractions</td>
+          <td>red <em>1</em></td>
+          <td>green <em>.6</em></td>
+          <td>blue <em>.2</em></td>
+          <td>HSL</td>
+          <td>hue <em>30&deg;</em></td>
+          <td>saturation <em>100%</em></td>
+          <td>lightness <em>60%</em></td>
+        </tr><tr><td colspan="50" class="br"></td></tr>
+        <tr>
+          <th rowspan="4" style="background-color:#33FF99" width="50px"></th>
+          <th rowspan="4"><em>#33FF99</em></th>
+          <td colspan="50" class="br"></td>
+        </tr>
+        <tr>
+          <td>24-bit rgb</td>
+          <td>red <em>51</em></td>
+          <td>green <em>255</em></td>
+          <td>blue <em>153</em></td>
+          <td>HSV</td>
+          <td>hue <em>150&deg;</em></td>
+          <td>saturation <em>80%</em></td>
+          <td>value <em>100%</em></td>
+        </tr>
+        <tr>
+          <td>Fractions</td>
+          <td>red <em>.2</em></td>
+          <td>green <em>1</em></td>
+          <td>blue <em>.6</em></td>
+          <td>HSL</td>
+          <td>hue <em>150&deg;</em></td>
+          <td>saturation <em>100%</em></td>
+          <td>lightness <em>60%</em></td>
+        </tr><tr><td colspan="50" class="br"></td></tr>
+        <tr>
+          <th rowspan="4" style="background-color:#9933FF" width="50px"></th>
+          <th rowspan="4"><em>#9933FF</em></th>
+          <td colspan="50" class="br"></td>
+        </tr>
+        <tr>
+          <td>24-bit rgb</td>
+          <td>red <em>153</em></td>
+          <td>green <em>51</em></td>
+          <td>blue <em>255</em></td>
+          <td>HSV</td>
+          <td>hue <em>270&deg;</em></td>
+          <td>saturation <em>80%</em></td>
+          <td>value <em>100%</em></td>
+        </tr>
+        <tr>
+          <td>Fractions</td>
+          <td>red <em>.6</em></td>
+          <td>green <em>.2</em></td>
+          <td>blue <em>1</em></td>
+          <td>HSL</td>
+          <td>hue <em>270&deg;</em></td>
+          <td>saturation <em>100%</em></td>
+          <td>lightness <em>60%</em></td>
+        </tr><tr><td colspan="50" class="br"></td></tr>
+      </table>
+      <br><br>
+      <div class="grid">
+        <div class="grid-cell">
+          <table border="1" cellspacing="0">
+            <tr>
+              <th>Base Triad</th>
+              <th class="box" style="background-color:#3399FF">#3399FF</th>
+              <th class="box" style="background-color:#FF3399">#FF3399</th>
+              <th class="box" style="background-color:#99FF33">#99FF33</th>
+            </tr>
+            <tr>
+              <th>Complementary Triad</th>
+              <th class="box" style="background-color:#FF9933">#FF9933</th>
+              <th class="box" style="background-color:#33FF99">#33FF99</th>
+              <th class="box" style="background-color:#9933FF">#9933FF</th>
+            </tr>
+          </table>
+        </div>
+        <div class="grid-cell">
+          <div id="lightswitch" onclick="
+          var temp = document.getElementById('style-dark-holder').innerHTML;
+          document.getElementById('style-dark-holder').innerHTML = document.getElementById('style-dark').innerHTML;
+          document.getElementById('style-dark').innerHTML = temp;
+          ">&#9775;</div>
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </body>
+</html>
