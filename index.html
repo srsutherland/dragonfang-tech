@@ -4,13 +4,35 @@
     <link rel="stylesheet" href="styles.css">
     <title>Dragonfang.tech</title>
 </head>
-<body class="flex-center">
-<div>
-    <canvas id="canvas-clock" width="500" height="500"></canvas>
+<body class="flex-body">
+<div class="flex-main">
+    <nav class="nav-left">
+        <div class="link-contain"><a href=clock>
+            <div class="hoverpill">Canvas Clock</div>
+            <div class="doticon">C</div></a>
+        </div>
+        <div class="link-contain"><a href=canvasPolar>
+            <div class="hoverpill">Polar Spiral</div>
+            <div class="doticon">P</div></a>
+        </div>
+        <div class="link-contain"><a href=polarTable>
+            <div class="hoverpill">Polar Table</div>
+            <div class="doticon">T</div></a>
+        </div>
+        <div class="link-contain"><a href=candyColors>
+            <div class="hoverpill">Candy Colors</div>
+            <div class="doticon">C</div></a>
+        </div>
+    </nav>
+    <section class="content-center">
+        <div>
+            <canvas id="canvas-clock" width="500" height="500"></canvas>
+        </div>
+        <script src="canvasClock.js"></script>
+    </section>
 </div>
-<script src="canvasClock.js"></script>
-<div class="footer">
+<footer class="footer">
     <a href="https://github.com/srsutherland/dragonfang-tech">source</a>
-</div>
+</footer>
 </body>
 </html>

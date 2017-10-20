@@ -21,9 +21,112 @@ a:hover {
     height: 95vh;
 }
 
-.footer {
+.footer, footer {
     position: absolute;
     text-align: right;
     right: 1em;
     bottom: .5em;
+}
+
+/* For Homepage */
+
+nav a, nav a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+.link-contain {
+    display: flex;
+    width:15em;
+}
+.illuminate .link-contain{
+    /*background-color: #ddd;*/
+    border: 1px solid #955;
+}
+.doticon {
+    display: inline-flex;
+    position: relative;
+    transition: 1s ease-out;
+    width: 2em;
+    height: 2em;
+    border-radius: 10em;
+    margin: .5em 0em;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+
+    background-color: #333;
+}
+.link-contain:hover .doticon{
+    right: 0;
+    color: #93f;
+    transform: rotate(360deg);
+}
+
+.doticon img {
+    max-width: 1.5em;
+    max-height: 1.5em;
+}
+
+.nav-left .doticon {
+    right: 10em;
+}
+.nav-left .link-contain:hover .doticon{
+    right: 2em;
+}
+
+.hoverpill {
+    display: inline-flex;
+    width: 9em;
+    height: 2em;
+    border-radius: 10em;
+    margin: .5em;
+    margin-right: 0;
+    align-items: center;
+    padding-left: 1em;
+    position: relative;
+    transition: 1s ease-out;
+    opacity: 0;
+
+    background-color: #111;
+}
+
+.link-contain:hover .hoverpill {
+    opacity: initial;
+    color: #3f9;
+}
+
+.nav-left .hoverpill {
+    right: 8em;
+}
+
+.nav-left .link-contain:hover .hoverpill {
+    right: 0;
+}
+
+.flex-main {
+    display: flex;
+    flex: 1;
+}
+
+.nav-left, .nav-right {
+    flex: 0 0 12em;
+    font-size: 1.5em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.flex-body {
+    display: flex;
+    min-height: 95vh;
+    /*flex-direction: column;*/
+}
+
+.content-center {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
