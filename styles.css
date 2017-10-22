@@ -95,6 +95,22 @@ nav a, nav a:hover {
     color: #3f9;
 }
 
+.link-contain:hover .mint {
+    color: #3f9;
+}
+
+.link-contain:hover .purple {
+    color: #93f;
+}
+
+.link-contain:hover .orange {
+    color: #f93;
+}
+
+.link-contain:hover .pink {
+    color: #f39;
+}
+
 .nav-left .hoverpill {
     right: 8em;
 }
