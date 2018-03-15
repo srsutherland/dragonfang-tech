@@ -79,7 +79,7 @@ class Fibonacci {
                 p1.calcForce(p2, 10);
             }
             p1.addVTheta(10);
-            //boundry
+            
         }
     }
 
@@ -148,8 +148,16 @@ class Point {
         }
         let dx = this.x - p.x;
         let dy = this.y - p.y;
-        this.vx += Math.sqrt( dx * dx) * mass
-        this.vx += Math.sqrt( dx * dx) * mass
+        let d_sq = dx * dx + dy * dy;
+        let r = mass / d_sq;
+        let theta = Math.tan()
+        this.vx += r * Math.sin(theta);
+        this.vy += r * Math.cos(theta);
+    }
+
+    move(s : number = 1) {
+    	this.x += this.vx * s;
+    	this.y += this.vy * s;
     }
 }
 
