@@ -1,4 +1,4 @@
-//fibonacci.ts transpiles to fibonacci .js
+//fibonacci.ts transpiles to fibonacci.js
 const CMint = '#3f9', CPurp = '#93f', CBlue = '#39f';
 const CLime = '#9f3', COran = '#f39', CPink = '#f93';
 const CAry = [CMint, CPurp, CBlue, CLime, COran, CPink];
