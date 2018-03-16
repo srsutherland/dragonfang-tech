@@ -2,7 +2,7 @@
 var CMint = '#3f9', CPurp = '#93f', CBlue = '#39f';
 var CLime = '#9f3', COran = '#f39', CPink = '#f93';
 var CAry = [CMint, CPurp, CBlue, CLime, COran, CPink];
-var CanvasPolar = (function () {
+var CanvasPolar = /** @class */ (function () {
     function CanvasPolar(id, A, B, color) {
         this.theta = 0;
         this.clearI = null;
