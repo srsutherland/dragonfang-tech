@@ -55,7 +55,9 @@ class Fibonacci {
 
     addPoint() {
         debugger;
-        let p = new Point(this.ctx, this.radius * .01, Math.random() * 1e-5, Math.random() * 1e-5);
+        let x = (Math.random() - .5);
+        let y = (Math.random() - .5);
+        let p = new Point(this.ctx, this.radius, x, y);
         this.points.push(p);
 
         if (this.points.length > 2) {
@@ -71,6 +73,18 @@ class Fibonacci {
         this.frame = 0;
     }
 
+    debugStart(interval : number = 1000) {
+        this.stop();
+        console.log(interval);
+
+        this.points.push(new Point(this.ctx, this.radius, 0, 10));
+        this.points.push(new Point(this.ctx, this.radius, -5, -5));
+        this.points.push(new Point(this.ctx, this.radius, 5, -5));
+
+        this.clearI = setInterval(this.step.bind(this), interval);
+        this.frame = 0;
+    }
+
     stop() {
         try{
             clearInterval(this.clearI);
@@ -82,26 +96,32 @@ class Fibonacci {
     }
 
     step() {
-        if (this.frame % 10 == 0) {
+        if (this.frame % 100 == 0) {
             this.addPoint();
         }
+        console.log(this.frame.toString() + ":");
+        this.draw();
 
         for (let p of this.points) {
+            p.forces = [];
             for (let p2 of this.points) {
-                p.calcForce(p2, 10);
+                p.calcForce(p2, 50);
             }
-            p.addVTheta(100);
+            p.addVTheta(10);
             let r = p.r();
             if (r >= this.radius) {
-                p.addVTheta(-20)
+                p.addVTheta(-10)
             } else {
-                p.addVTheta(5 / (1-r/this.radius))
+                p.addVTheta(-1 / (1-r/this.radius))
             }
-            p.move(10);
+            let vr = p.vr();
+            if (vr) {
+                p.addVTheta(-vr * (-Math.exp(-.05 * vr) + 1)) //resistance
+            }
+            p.move(.1);
         }
-        this.draw();
+        //this.draw();
         this.frame++;
-        console.log(this.frame.toString() + ":" + this.fibs.toString())
     }
 
     draw() {
@@ -122,13 +142,16 @@ class Point {
     color : string;
     ctx : CanvasRenderingContext2D;
     size: number;
+    scale: number;
+    forces : number[][] = [];
 
-    constructor (ctx: CanvasRenderingContext2D, size: number, x : number = 0, y: number = 0, color? : string) {
+    constructor (ctx: CanvasRenderingContext2D, scale: number, x : number = 0, y: number = 0, color? : string) {
         this.x = x;
         this.y = y;
         this.vx = 0;
         this.vy = 0;
-        this.size = size;
+        this.scale = scale;
+        this.size = scale * .01;
         this.ctx = ctx;
 
         if (color) {
@@ -143,6 +166,13 @@ class Point {
         this.ctx.fillStyle = this.color;
         this.ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
         this.ctx.fill();
+        this.ctx.strokeStyle = this.color;
+        for (let v of this.forces) {
+            this.ctx.beginPath();
+            this.ctx.moveTo(this.x, this.y,);
+            this.ctx.lineTo(3* (this.x + v[0]), 3 * (this.y + v[1]));
+            this.ctx.stroke();
+        }
     }
 
     genColor() {
@@ -166,10 +196,13 @@ class Point {
     }
 
     addVTheta(val: number) {
-        let r = this.vr() + val;
-        let theta = this.vtheta();
-        this.x = r * Math.cos(theta);
-        this.y = r * Math.sin(theta);
+        let r = val; //this.vr() + val;
+        let theta = this.theta();
+
+        this.addForce(
+            r * Math.cos(theta),
+            r * Math.sin(theta)
+        );
     }
 
     calcForce(p : Point, mass: number) {
@@ -179,10 +212,19 @@ class Point {
         let dx = this.x - p.x;
         let dy = this.y - p.y;
         let d_sq = dx * dx + dy * dy;
-        let r = mass / d_sq;
-        let theta = Math.atan(dy/dx);
-        this.vx += r * Math.cos(theta);
-        this.vy += r * Math.sin(theta);
+        let r = mass / Math.sqrt(d_sq);
+        let theta = Math.atan2(dy, dx);
+
+        this.addForce(
+            r * Math.cos(theta),
+            r * Math.sin(theta)
+        );
+    }
+
+    addForce(x: number, y: number) {
+        this.vx += x;
+        this.vy += y;
+        this.forces.push([x, y]);
     }
 
     move(s : number = 1) {
@@ -197,7 +239,8 @@ function getRandomInt(min, max) : number {
 
 try {
     let fibonacci = new Fibonacci("canvas");
-    fibonacci.start(200);
+    fibonacci.start(100);
+    //fibonacci.debugStart(100)
 } catch (e) {
     console.log(e.toString())
 }
