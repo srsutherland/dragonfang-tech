@@ -1,0 +1,77 @@
+<!--
+    URL list:
+    https://www.nytimes.com/games/wordle/index.html
+    https://www.nytimes.com/games/connections
+    https://everydaypuzzlesgame.com/g/hashtag/index.html
+    https://multiwordle.org/
+    https://metazooa.com/game
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Wordle and Daily Puzzles</title>
+    <style>
+        .puzzlink-container {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            grid-template-columns: auto auto;
+            height: 95vh;
+        }
+        .puzzlink {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            color: white;
+            background-color: #201d1d;
+            transition: background-color 0.3s;
+        }
+        .puzzlink:hover {
+            background-color: #423b3b;
+        }
+        .puzzlink img {
+            max-width: 100px;
+            max-height: 100px;
+            width: fit-content;
+        }
+        .puzzlink p {
+            margin: 0.5em 0 0 0;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="puzzlink-container">
+        <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank"><div class="puzzlink">
+            <img src="img/wordle/wordle-icon.svg" alt="Wordle">
+            <p>Wordle</p>
+        </div></a>
+        <a href="https://www.nytimes.com/games/connections" target="_blank"><div class="puzzlink">
+            <img src="img/wordle/Connections-Icon.svg" alt="Connections">
+            <p>Connections</p>
+        </div></a>
+        <a href="https://everydaypuzzlesgame.com/g/hashtag/index.html" target="_blank"><div class="puzzlink">
+            <img src="img/wordle/hashtag.png" alt="Hashtag">
+            <p>Hashtag</p>
+        </div></a>
+        <a href="https://multiwordle.org/" target="_blank"><div class="puzzlink">
+            <img src="img/wordle/multiwordle.png" alt="Multiwordle" style="border-radius: 10px;">
+            <p>Multiwordle</p>
+        </div></a>
+        <a href="https://metazooa.com/game" target="_blank"><div class="puzzlink">
+            <img src="img/wordle/metazooa.png" alt="Metazooa">
+            <p>Metazooa</p>
+        </div></a>
+    </div>
+</body>
+</html>
