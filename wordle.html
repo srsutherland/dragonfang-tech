@@ -9,6 +9,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Wordle and Daily Puzzles</title>
     <style>
@@ -26,10 +28,12 @@
             align-items: center;
             align-content: center;
             justify-content: center;
-            width: 150px;
-            height: 150px;
+            width: 130px;
+            height: 130px;
+            max-width: 30vw;
+            max-height: 30vw;
             margin: 10px;
-            padding: 10px;
+            padding: 20px;
             border: 1px solid black;
             border-radius: 10px;
             color: white;
@@ -42,11 +46,11 @@
         .puzzlink img {
             max-width: 100px;
             max-height: 100px;
-            width: fit-content;
         }
         .puzzlink p {
             margin: 0.5em 0 0 0;
-            font-size: 1.5em;
+            font-size: 1.3em;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
     </style>
 </head>
@@ -71,6 +75,18 @@
         <a href="https://metazooa.com/game" target="_blank"><div class="puzzlink">
             <img src="img/wordle/metazooa.png" alt="Metazooa">
             <p>Metazooa</p>
+        </div></a>
+        <a href="https://linxicon.com/" target="_blank"><div class="puzzlink">
+            <img src="img/wordle/linxicon.svg" alt="Linxicon">
+            <p>Linxicon</p>
+        </div></a>
+        <a href="https://23words.com/" target="_blank"><div class="puzzlink">
+            <img src="img/wordle/23.svg" alt="23 Words">
+            <p>23 Words</p>
+        </div></a>
+        <a href="https://angle.wtf/" target="_blank"><div class="puzzlink">
+            <img src="img/wordle/angle.ico" alt="Angle">
+            <p>Angle WTF</p>
         </div></a>
     </div>
 </body>
