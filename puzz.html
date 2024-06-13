@@ -20,7 +20,13 @@
             align-items: center;
             align-content: center;
             grid-template-columns: auto auto;
-            height: 95vh;
+            min-height: 95vh;
+        }
+        /* increase column count for larger screens */
+        @media screen and (min-width: 800px) {
+            .puzzlink-container {
+                grid-template-columns: auto auto auto;
+            }
         }
         .puzzlink {
             display: flex;
@@ -60,17 +66,17 @@
             <img src="img/wordle/wordle-icon.svg" alt="Wordle">
             <p>Wordle</p>
         </div></a>
-        <a href="https://www.nytimes.com/games/connections" target="_blank"><div class="puzzlink">
-            <img src="img/wordle/Connections-Icon.svg" alt="Connections">
-            <p>Connections</p>
+        <a href="https://multiwordle.org/" target="_blank"><div class="puzzlink">
+            <img src="img/wordle/multiwordle.png" alt="Multiwordle" style="border-radius: 10px;">
+            <p>Multiwordle</p>
         </div></a>
         <a href="https://everydaypuzzlesgame.com/g/hashtag/index.html" target="_blank"><div class="puzzlink">
             <img src="img/wordle/hashtag.png" alt="Hashtag">
             <p>Hashtag</p>
         </div></a>
-        <a href="https://multiwordle.org/" target="_blank"><div class="puzzlink">
-            <img src="img/wordle/multiwordle.png" alt="Multiwordle" style="border-radius: 10px;">
-            <p>Multiwordle</p>
+        <a href="https://www.nytimes.com/games/connections" target="_blank"><div class="puzzlink">
+            <img src="img/wordle/Connections-Icon.svg" alt="Connections">
+            <p>Connections</p>
         </div></a>
         <a href="https://metazooa.com/game" target="_blank"><div class="puzzlink">
             <img src="img/wordle/metazooa.png" alt="Metazooa">
