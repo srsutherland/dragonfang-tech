@@ -1,0 +1,29 @@
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .rounded-square {
+      width: 200px;
+      height: 200px;
+      rx: 20px;
+      ry: 20px;
+    }
+    .beige { fill: #d8c3a5; }
+    .yellow { fill: #ffcc00; }
+    .light-green { fill: #66cc66; }
+    .baby-blue { fill: #87ceeb; }
+    .text {
+      fill: black;
+      font-family: monospace;
+      font-size: 150px;
+      font-weight: bold;
+    }
+  </style>
+  <!-- Top left square -->
+  <rect x="30" y="30" class="rounded-square beige" />
+  <text x="130" y="180" text-anchor="middle" class="text">C</text>
+  <!-- Top right square -->
+  <rect x="270" y="30" class="rounded-square yellow" />
+  <!-- Bottom left square -->
+  <rect x="30" y="270" class="rounded-square light-green" />
+  <!-- Bottom right square -->
+  <rect x="270" y="270" class="rounded-square baby-blue" />
+</svg>

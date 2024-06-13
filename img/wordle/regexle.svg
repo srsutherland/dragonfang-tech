@@ -1,0 +1,18 @@
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .hexagon {
+      stroke: white;
+      fill: none;
+    }
+    .hex-text {
+      fill: white;
+      font-family: monospace;
+      font-size: 150px;
+      font-weight: bold;
+    }
+  </style>
+  <!-- Define a hexagon using a polygon element -->
+  <polygon class="hexagon" points="250,30 450,155 450,355 250,480 50,355 50,155" stroke-width="20" />
+  <!-- Center the text inside the hexagon -->
+  <text x="50%" y="52%" text-anchor="middle" dy=".3em" class="hex-text">(.*)</text>
+</svg>
