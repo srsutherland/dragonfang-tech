@@ -183,23 +183,81 @@
           <td>lightness <em>60%</em></td>
         </tr><tr><td colspan="50" class="br"></td></tr>
       </table>
-      <br><br>
       <div class="grid">
         <div class="grid-cell">
-          <table border="1" cellspacing="0">
+          <table border="1" cellspacing="0" style="margin: auto;">
             <tr>
-              <th>Base Triad</th>
+              <th>Primary Triad</th>
               <th class="box" style="background-color:#3399FF">#3399FF</th>
               <th class="box" style="background-color:#FF3399">#FF3399</th>
               <th class="box" style="background-color:#99FF33">#99FF33</th>
             </tr>
             <tr>
-              <th>Complementary Triad</th>
+              <th>Secondary Triad</th>
               <th class="box" style="background-color:#FF9933">#FF9933</th>
               <th class="box" style="background-color:#33FF99">#33FF99</th>
               <th class="box" style="background-color:#9933FF">#9933FF</th>
             </tr>
           </table>
+        </div>
+        <div class="grid-cell">
+          <canvas id="angles" width="300" height="300"></canvas>
+          <script>
+            // Draw colored lines at the appropriate angles
+            const candy_primary = [
+              ["#3399FF", 210],
+              ["#FF3399", 330],
+              ["#99FF33", 90]
+            ]
+            const candy_secondary = [
+              ["#FF9933", 30],
+              ["#33FF99", 150],
+              ["#9933FF", 270]
+            ]
+            const rgb_primary = [
+              ["#ff3333", 0],
+              ["#33ff33", 120],
+              ["#3333ff", 240]
+            ]
+            const rgb_secondary = [
+              ["#ff33ff", 300],
+              ["#ffff33", 60],
+              ["#33ffff", 180]
+            ]
+            const canvas = document.getElementById("angles");
+            const ctx = canvas.getContext("2d");
+            const center = [canvas.width / 2, canvas.height / 2];
+            const radius = 120;
+            const degOffset = -90 // Offset to start at the top
+            const toRad = deg => deg * Math.PI / 180;
+            const toDeg = rad => rad * 180 / Math.PI;
+            const fromPolar = (r, theta) => [
+              center[0] + r * Math.cos(theta),
+              center[1] + r * Math.sin(theta)
+            ];
+            const drawLine = (color, angle) => {
+              const radians = toRad(angle + degOffset);
+              ctx.beginPath();
+              ctx.moveTo(...fromPolar(10, radians));
+              ctx.lineTo(...fromPolar(radius, radians));
+              ctx.strokeStyle = color;
+              ctx.stroke();
+            };
+            const drawLines = pair => drawLine(...pair);
+            // Draw the lines
+            ctx.lineCap = "round";
+            ctx.lineWidth = 9;
+            candy_primary.forEach(drawLines);
+            ctx.lineWidth = 6;
+            candy_secondary.forEach(drawLines);
+            // Dashed/dotted lines
+            ctx.lineWidth = 4;
+            ctx.setLineDash([5, 15]);
+            rgb_primary.forEach(drawLines);
+            ctx.lineWidth = 3;
+            ctx.setLineDash([1, 12]);
+            rgb_secondary.forEach(drawLines);
+          </script>
         </div>
         <div class="grid-cell">
           <div id="lightswitch" onclick="body.classList.toggle('dark')">&#9775;</div>
