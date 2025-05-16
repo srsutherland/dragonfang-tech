@@ -2,7 +2,6 @@
   <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="/img/favicon.png"/>
-    <style id="style-dark-holder"></style>
     <style id="style-main">
       body {color:#777;background-color:white;transition:.5s ease-out;
       display:flex;align-items:center;justify-content:center;}
@@ -20,17 +19,16 @@
       width:1.1em;height:1.1em;vertical-align:middle;text-align:center;
       margin:auto;cursor:pointer;border-radius:5em;transition:.5s; line-height: 1.15em;}
       #lightswitch:hover {color:#111; background-color:white;}
-    </style>
-    <style id="style-dark">
-      body {background-color:#111;}
-      em {color:white;}
-      th.box {color:#111;}
-      td.br {background-color:#444;}
-      #lightswitch {color:#111; background-color:white;}
-      #lightswitch:hover {color:white; background-color:#111;}
+
+      body.dark  {background-color:#111;}
+      .dark em {color:white;}
+      .dark th.box {color:#111;}
+      .dark td.br {background-color:#444;}
+      .dark #lightswitch {color:#111; background-color:white;}
+      .dark #lightswitch:hover {color:white; background-color:#111;}
     </style>
   </head>
-  <body>
+  <body class="dark">
     <div class="contain">
       <table border="1" cellspacing="0">
         <tr><th colspan="50" style="padding:7px"><em>Candy Colors</em></th></tr>
@@ -204,11 +202,7 @@
           </table>
         </div>
         <div class="grid-cell">
-          <div id="lightswitch" onclick="
-          var temp = document.getElementById('style-dark-holder').innerHTML;
-          document.getElementById('style-dark-holder').innerHTML = document.getElementById('style-dark').innerHTML;
-          document.getElementById('style-dark').innerHTML = temp;
-          ">&#9775;</div>
+          <div id="lightswitch" onclick="body.classList.toggle('dark')">&#9775;</div>
         </div>
       </div>
       <br><br>
