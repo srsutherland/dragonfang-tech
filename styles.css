@@ -1,3 +1,12 @@
+:root {
+    --purple: #93f;
+    --blue: #39f;
+    --mint: #3f9;
+    --lime: #9f3;
+    --orange: #f93;
+    --pink: #f39;
+}
+
 html, body, canvas {background-color:#000}
 
 body {
@@ -92,23 +101,31 @@ nav a, nav a:hover {
 
 .link-contain:hover .hoverpill {
     opacity: initial;
-    color: #3f9;
+    color: var(--mint);
+}
+
+.link-contain:hover .blue {
+    color: var(--blue);
 }
 
 .link-contain:hover .mint {
-    color: #3f9;
+    color: var(--mint);
 }
 
 .link-contain:hover .purple {
-    color: #93f;
+    color: var(--purple);
+}
+
+.link-contain:hover .lime {
+    color: var(--lime);
 }
 
 .link-contain:hover .orange {
-    color: #f93;
+    color: var(--orange);
 }
 
 .link-contain:hover .pink {
-    color: #f39;
+    color: var(--pink);
 }
 
 .nav-left .hoverpill {
